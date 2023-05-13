@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.EntityFrameworkCore;
 using SupermarketWEB.Data;
 using SupermarketWEB.Models;
-using System.ComponentModel;
+using Microsoft.EntityFrameworkCore;
 
-namespace SupermarketWEB.Pages.Categories
+namespace SupermarketWEB.Pages.Products
 {
     public class EditModel : PageModel
     {
@@ -60,7 +59,7 @@ namespace SupermarketWEB.Pages.Categories
                     throw;
                 }
             }
-            return RedirectToPage("./Index");
+            return RedirectToPage();
         }
 
         private bool CategoryExists(int id)
@@ -69,4 +68,4 @@ namespace SupermarketWEB.Pages.Categories
         }
     }
 }
-    
+
