@@ -25,15 +25,15 @@ namespace SupermarketWEB.Pages.Products
                 return NotFound();
             }
 
-            var category = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
-            if (category == null)
+            var product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
             {
                 return NotFound();
             }
             else
             {
-                Category = category;
-                _context.Categories.Remove(Products);
+                Product = product;
+                _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
             }
 
