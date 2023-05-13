@@ -17,7 +17,7 @@ namespace SupermarketWEB.Pages.Products
         }
 
         [BindProperty]
-        public Category Category { get; set; } = default;
+        public Category Category { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

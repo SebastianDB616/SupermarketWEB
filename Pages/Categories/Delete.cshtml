@@ -31,3 +31,8 @@
         <a asp-page="./Index" class="btn btn-primary">Back to List</a>
     </form>
 </div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

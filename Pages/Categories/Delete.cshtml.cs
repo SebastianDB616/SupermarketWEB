@@ -15,7 +15,7 @@ namespace SupermarketWEB.Pages.Categories
         }
 
         [BindProperty]
-        public Category Category { get; set; } = default;
+        public Category Category { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -32,8 +32,11 @@ namespace SupermarketWEB.Pages.Categories
             else
             {
                 Category = category;
+                _context.Categories.Remove(category);
+                await _context.SaveChangesAsync();
             }
-            return Page();
+
+            return RedirectToPage("./Index");
         }
     }
 }
